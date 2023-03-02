@@ -50,6 +50,7 @@ function init() {
         .dropdown {
             position: relative;
             display: inline-block;
+            pointer-events: auto;
         }
         
         .dropdown-content {
