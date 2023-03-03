@@ -103,7 +103,7 @@ function aioContainer() {
     makeDropdown("Tools", [
       ["Toggle Dev", toggleDev],
       ["Eruda", eruda],
-      ["SaveTool v2", saveTool],
+      ["SaveTool v2", saveTool2],
     ])
   );
   document.documentElement.append(aio);
