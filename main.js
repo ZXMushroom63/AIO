@@ -91,6 +91,12 @@ function clearCache() {
     document.cookie="";
     location.reload(true);
 }
+repos = {
+    addRepo: ()=>{},
+    addPlugin: ()=>{},
+    addScript: ()=>{},
+    remove: ()=>{},
+}
 function aioContainer() {
   var aio = document.createElement("div");
   aio.id = "aio";
@@ -106,6 +112,14 @@ function aioContainer() {
       ["Toggle Dev", toggleDev],
       ["Eruda", eruda],
       ["SaveTool v2", saveTool2],
+    ])
+  );
+  aio.append(
+    makeDropdown("Repos", [
+      ["Add Repo", repos.addRepo],
+      ["Install Plugin", repos.addPlugin],
+      ["Install Script", repos.addScript],
+      ["Remove...", repos.remove],
     ])
   );
   document.documentElement.append(aio);
