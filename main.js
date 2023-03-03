@@ -88,15 +88,17 @@ function saveTool2() {
   }
 }
 function clearCache() {
-    document.cookie="";
-    location.reload(true);
+  document.cookie = "";
+  location.reload(true);
 }
 repos = {
-    addRepo: ()=>{},
-    addPlugin: ()=>{},
-    addScript: ()=>{},
-    remove: ()=>{},
-}
+  addRepo: () => {},
+  addPlugin: () => {},
+  addStyle: () => {},
+  remove: () => {},
+  init: () => {},
+  save: () => {},
+};
 function aioContainer() {
   var aio = document.createElement("div");
   aio.id = "aio";
@@ -118,7 +120,7 @@ function aioContainer() {
     makeDropdown("Repos", [
       ["Add Repo", repos.addRepo],
       ["Install Plugin", repos.addPlugin],
-      ["Install Script", repos.addScript],
+      ["Install Theme", repos.addStyle],
       ["Remove...", repos.remove],
     ])
   );
@@ -131,6 +133,10 @@ function init() {
     "https://raw.githubusercontent.com/ZXMushroom63/AIO/main/main.css",
     aioContainer,
     "shift"
+  );
+  inject(
+    "script",
+    "https://raw.githubusercontent.com/ZXMushroom63/AIO/main/repos.js"
   );
 }
 init();
