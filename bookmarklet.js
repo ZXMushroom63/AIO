@@ -1,4 +1,4 @@
-function inject(type, url, after = () => {}) {
+javascript:function inject(type, url, after = () => {}) {
   fetch(url).then((x) =>
     x.blob().then((y) =>
       y.text().then((z) => {
@@ -11,6 +11,6 @@ function inject(type, url, after = () => {}) {
   );
 }
 inject(
-  "style",
+  "script",
   "https://raw.githubusercontent.com/ZXMushroom63/AIO/main/main.js"
 );
