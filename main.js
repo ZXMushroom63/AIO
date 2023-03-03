@@ -98,6 +98,7 @@ var repos = {
   run: () => {},
   add: () => {},
   remove: () => {},
+  reset: () => {},
 };
 var backupTool = {
   makeBackup: () => {},
@@ -140,6 +141,12 @@ function aioContainer() {
         "List Repos",
         () => {
           alert(repos.list().join(", "));
+        },
+      ],
+      [
+        "Reset Repos",
+        () => {
+          repos.reset();
         },
       ],
     ])

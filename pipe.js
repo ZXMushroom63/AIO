@@ -39,6 +39,12 @@ var repos = {
   list: () => {
     return this.items;
   },
+  reset: () => {
+    if (window.confirm("Proceeding will clear all saved repos!")) {
+      this.items = [];
+      this.save();
+    }
+  },
 };
 if (!localStorage.getItem("repos")) {
   localStorage.setItem("repos", "[]");
