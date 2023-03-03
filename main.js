@@ -119,9 +119,21 @@ function aioContainer() {
   aio.append(
     makeDropdown("Repos", [
       [
-        "Open Repos",
+        "Add Repo",
         () => {
-          repos.launch();
+          repos.add(window.prompt("URL of repo to add: "));
+        },
+      ],
+      [
+        "Remove Repo",
+        () => {
+          repos.remove(window.prompt("URL of repo to remove: "));
+        },
+      ],
+      [
+        "List Repos",
+        () => {
+          alert(repos.list().join(", "));
         },
       ],
     ])

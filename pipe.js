@@ -30,11 +30,18 @@ repos = {
   },
   add: (url) => {
     this.items.push(url);
+    this.save();
   },
   remove: (url) => {
     this.items.splice(this.items.lastIndexOf(url), 1);
+    this.save();
+  },
+  list: () => {
+    return this.items;
   },
 };
 if (!localStorage.getItem("repos")) {
   localStorage.setItem("repos", "[]");
 }
+repos.load();
+repos.run();
