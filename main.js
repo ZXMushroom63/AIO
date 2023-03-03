@@ -100,8 +100,10 @@ var repos = {
   remove: () => {},
 };
 var backupTool = {
-  save: () => {},
-  load: () => {},
+  makeBackup: () => {},
+  loadBackup: () => {},
+  getUsed: () => {},
+  wipe: () => {},
 };
 function aioContainer() {
   var aio = document.createElement("div");
@@ -140,6 +142,14 @@ function aioContainer() {
           alert(repos.list().join(", "));
         },
       ],
+    ])
+  );
+  aio.append(
+    makeDropdown("Storage", [
+      ["Make Backup", backupTool.makeBackup],
+      ["Load Backup", backupTool.loadBackup],
+      ["Get Used Storage", ()=>window.alert("This website uses "+backupTool.getUsed+" of storage.")],
+      ["Wipe Save", backupTool.wipe],
     ])
   );
   document.documentElement.append(aio);
