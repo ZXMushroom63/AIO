@@ -98,6 +98,7 @@ repos = {
   remove: () => {},
   init: () => {},
   save: () => {},
+  launch: ()=>{}
 };
 function aioContainer() {
   var aio = document.createElement("div");
@@ -118,10 +119,12 @@ function aioContainer() {
   );
   aio.append(
     makeDropdown("Repos", [
-      ["Add Repo", repos.addRepo],
-      ["Install Plugin", repos.addPlugin],
-      ["Install Theme", repos.addStyle],
-      ["Remove...", repos.remove],
+      [
+        "Open Repos",
+        () => {
+          repos.launch();
+        },
+      ],
     ])
   );
   document.documentElement.append(aio);

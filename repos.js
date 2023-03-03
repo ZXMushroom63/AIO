@@ -33,7 +33,7 @@ repos = {
     }
     for (let i = 0; i < r.installed.length; i++) {
       const res = r.installed[i];
-      inject("script", res);
+      inject(res.type, res.url);
     }
   },
   save: () => {
@@ -75,6 +75,12 @@ repos = {
       }
     }
     this.save();
+  },
+  launch: () => {
+    var containerDiv = document.createElement("div");
+    containerDiv.id = "repos";
+    document.querySelector("#aio").append(containerDiv);
+    
   },
 };
 repos.init();
