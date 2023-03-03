@@ -3,6 +3,7 @@ javascript: function inject(type, url, after = () => {}) {
     x.blob().then((y) =>
       y.text().then((z) => {
         var elem = document.createElement(type);
+        elem.classList.add("injected");
         elem.innerHTML = z;
         document.head.append(elem);
         after();

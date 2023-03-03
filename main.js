@@ -25,7 +25,7 @@ function makeDropdown(
   var dropdown = document.createElement("div");
   dropdown.classList.add("dropdown");
   var dropbtn = document.createElement("button");
-  dropdown.classList.add("dropbtn");
+  dropbtn.classList.add("dropbtn");
   dropbtn.innerText = name;
   dropdown.append(dropbtn);
   var dropdownContent = document.createElement("div");
