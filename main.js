@@ -52,7 +52,7 @@ function quit() {
   }
 }
 function jsLoader() {
-  if (window.scriptTool.load) {
+  if (window.scriptTool) {
     window.scriptTool.load();
   }
 }
