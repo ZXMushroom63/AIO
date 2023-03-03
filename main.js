@@ -139,7 +139,7 @@ function init() {
   );
   inject(
     "script",
-    "https://raw.githubusercontent.com/ZXMushroom63/AIO/main/repos.js"
+    "https://raw.githubusercontent.com/ZXMushroom63/AIO/main/pipe.js"
   );
 }
 init();
