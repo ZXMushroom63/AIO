@@ -14,30 +14,30 @@ function inject(type, url, after = () => {}, id = "") {
     )
   );
 }
-repos = {
+var repos = {
   items: [],
   save: () => {
-    localStorage.setItem("repos", JSON.stringify(repos.items));
+    localStorage.setItem("repos", JSON.stringify(this.items));
   },
   load: () => {
-    repos.items = JSON.parse(localStorage.getItem("repos"));
+    this.items = JSON.parse(localStorage.getItem("repos"));
   },
   run: () => {
-    for (let i = 0; i < repos.items.length; i++) {
-      const item = repos.items[i];
+    for (let i = 0; i < this.items.length; i++) {
+      const item = this.items[i];
       inject("script", item);
     }
   },
   add: (url) => {
-    repos.items.push(url);
-    repos.save();
+    this.items.push(url);
+    this.save();
   },
   remove: (url) => {
-    repos.items.splice(repos.items.lastIndexOf(url), 1);
-    repos.save();
+    this.items.splice(this.items.lastIndexOf(url), 1);
+    this.save();
   },
   list: () => {
-    return repos.items;
+    return this.items;
   },
 };
 if (!localStorage.getItem("repos")) {

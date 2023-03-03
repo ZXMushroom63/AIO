@@ -91,13 +91,17 @@ function clearCache() {
   document.cookie = "";
   location.reload(true);
 }
-repos = {
+var repos = {
   items: [],
   save: () => {},
   load: () => {},
   run: () => {},
   add: () => {},
   remove: () => {},
+};
+var backupTool = {
+  save: () => {},
+  load: () => {},
 };
 function aioContainer() {
   var aio = document.createElement("div");
