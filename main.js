@@ -79,7 +79,7 @@ function saveTool2() {
   for (let io = 0; io < localStorage.length; io++) {
     const key = localStorage.key(io);
     document.write(
-      `<a href="javascript:var newval = window.prompt('Set ${key} to:', localStorage.getItem('${key}')); localStorage.setItem('${key}', newval); aio_savetoolv2()">${key}:   ${localStorage.getItem(
+      `<a href="javascript:var newval = window.prompt('Set ${key} to:', localStorage.getItem('${key}')); localStorage.setItem('${key}', newval); saveTool2()">${key}:   ${localStorage.getItem(
         key
       )}</a>`
     );
