@@ -4,6 +4,7 @@ html {
 }
 
 #aio {
+    all: initial;
     position: fixed;
     top: 0;
     left: 0;
@@ -23,6 +24,7 @@ html {
 }
 
 .dropdown {
+    all: initial;
     position: relative;
     display: inline-block;
     pointer-events: auto;

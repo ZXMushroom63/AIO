@@ -52,6 +52,8 @@ function init() {
   window.aio = true;
   inject(
     "style",
-    "https://raw.githubusercontent.com/ZXMushroom63/AIO/main/main.css"
+    "https://raw.githubusercontent.com/ZXMushroom63/AIO/main/main.css",
+    aioContainer
   );
 }
+init();
