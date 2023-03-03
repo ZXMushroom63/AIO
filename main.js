@@ -61,9 +61,9 @@ function jsLoader() {
 }
 function toggleDev() {
   if (document.body.contentEditable == "true") {
-    document.body.contentEditable == "false";
+    document.body.contentEditable = "false";
   } else {
-    document.body.contentEditable == "true";
+    document.body.contentEditable = "true";
   }
 }
 function eruda() {
