@@ -43,7 +43,7 @@ function makeDropdown(
 function quit() {
   document.querySelector("#aio").remove();
   var inj = document.querySelectorAll(".injected");
-  for (elem in inj) {
+  for (elem of inj) {
     elem.remove();
   }
 }
