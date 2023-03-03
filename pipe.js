@@ -17,27 +17,27 @@ function inject(type, url, after = () => {}, id = "") {
 repos = {
   items: [],
   save: () => {
-    localStorage.setItem("repos", JSON.stringify(this.items));
+    localStorage.setItem("repos", JSON.stringify(repos.items));
   },
   load: () => {
-    this.items = JSON.parse(localStorage.getItem("repos"));
+    repos.items = JSON.parse(localStorage.getItem("repos"));
   },
   run: () => {
-    for (let i = 0; i < this.items.length; i++) {
-      const item = this.items[i];
+    for (let i = 0; i < repos.items.length; i++) {
+      const item = repos.items[i];
       inject("script", item);
     }
   },
   add: (url) => {
-    this.items.push(url);
-    this.save();
+    repos.items.push(url);
+    repos.save();
   },
   remove: (url) => {
-    this.items.splice(this.items.lastIndexOf(url), 1);
-    this.save();
+    repos.items.splice(repos.items.lastIndexOf(url), 1);
+    repos.save();
   },
   list: () => {
-    return this.items;
+    return repos.items;
   },
 };
 if (!localStorage.getItem("repos")) {
