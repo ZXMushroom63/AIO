@@ -3,6 +3,7 @@ function inject(type, url, after = () => {}) {
     x.blob().then((y) =>
       y.text().then((z) => {
         var elem = document.createElement(type);
+        elem.classList.add("injected");
         elem.innerHTML = z;
         document.head.append(elem);
         after();
@@ -41,6 +42,10 @@ function makeDropdown(
 }
 function quit() {
   document.querySelector("#aio").remove();
+  var inj = document.querySelectorAll(".injected");
+  for (elem in inj) {
+    elem.remove();
+  }
 }
 function aioContainer() {
   var aio = document.createElement("div");

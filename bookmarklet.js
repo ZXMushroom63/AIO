@@ -1,4 +1,4 @@
-javascript:function inject(type, url, after = () => {}) {
+javascript: function inject(type, url, after = () => {}) {
   fetch(url).then((x) =>
     x.blob().then((y) =>
       y.text().then((z) => {
