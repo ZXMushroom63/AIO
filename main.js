@@ -51,9 +51,6 @@ function quit() {
     element.remove();
   }
 }
-function unshift() {
-  document.querySelector("#shift").remove();
-}
 function jsLoader() {
   if (window.scriptTool.load) {
     window.scriptTool.load();
@@ -96,7 +93,6 @@ function aioContainer() {
   aio.append(
     makeDropdown("File", [
       ["Add Script...", jsLoader],
-      ["Unshift", unshift],
       ["Quit", quit],
     ])
   );
