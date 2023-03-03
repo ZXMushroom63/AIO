@@ -92,13 +92,12 @@ function clearCache() {
   location.reload(true);
 }
 repos = {
-  addRepo: () => {},
-  addPlugin: () => {},
-  addStyle: () => {},
-  remove: () => {},
-  init: () => {},
+  items: [],
   save: () => {},
-  launch: ()=>{}
+  load: () => {},
+  run: () => {},
+  add: () => {},
+  remove: () => {},
 };
 function aioContainer() {
   var aio = document.createElement("div");
