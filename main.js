@@ -148,7 +148,13 @@ function aioContainer() {
     makeDropdown("Storage", [
       ["Make Backup", backupTool.makeBackup],
       ["Load Backup", backupTool.loadBackup],
-      ["Get Used Storage", ()=>window.alert("This website uses "+backupTool.getUsed+" of storage.")],
+      [
+        "Get Used Storage",
+        () =>
+          window.alert(
+            "This website uses " + backupTool.getUsed() + " of storage."
+          ),
+      ],
       ["Wipe Save", backupTool.wipe],
     ])
   );
@@ -165,6 +171,10 @@ function init() {
   inject(
     "script",
     "https://raw.githubusercontent.com/ZXMushroom63/AIO/main/pipe.js"
+  );
+  inject(
+    "script",
+    "https://raw.githubusercontent.com/ZXMushroom63/AIO/main/backup.js"
   );
 }
 init();
