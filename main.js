@@ -1,4 +1,4 @@
-javascript: function inject(type, url, after = () => {}) {
+function inject(type, url, after = () => {}) {
   fetch(url).then((x) =>
     x.blob().then((y) =>
       y.text().then((z) => {
@@ -39,7 +39,19 @@ function makeDropdown(
   dropdown.append(dropdownContent);
   return dropdown;
 }
+function quit() {
+  document.querySelector("#aio").remove();
+}
+function aioContainer() {
+  var aio = document.createElement("div");
+  aio.id = "aio";
+  aio.append(makeDropdown("File", [["Quit", quit]]));
+  document.documentElement.append(aio);
+}
 function init() {
   window.aio = true;
-  inject();
+  inject(
+    "style",
+    "https://raw.githubusercontent.com/ZXMushroom63/AIO/main/main.css"
+  );
 }
