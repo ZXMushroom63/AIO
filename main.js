@@ -46,8 +46,9 @@ function makeDropdown(
 function quit() {
   document.querySelector("#aio").remove();
   var inj = document.querySelectorAll(".injected");
-  for (elem of inj) {
-    elem.remove();
+  for (let i = 0; i < inj.length; i++) {
+    const element = inj[i];
+    element.remove();
   }
 }
 function unshift() {
