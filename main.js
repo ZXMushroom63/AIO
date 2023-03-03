@@ -87,12 +87,17 @@ function saveTool2() {
     document.write(`<br>`);
   }
 }
+function clearCache() {
+    document.cookie="";
+    location.reload(true);
+}
 function aioContainer() {
   var aio = document.createElement("div");
   aio.id = "aio";
   aio.append(
     makeDropdown("File", [
       ["Add Script...", jsLoader],
+      ["Clear Cache", clearCache],
       ["Quit", quit],
     ])
   );
