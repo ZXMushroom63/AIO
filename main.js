@@ -63,6 +63,39 @@ function toggleDev() {
     document.body.contentEditable = "true";
   }
 }
+function displayHTML(html) {
+  var winDow = window.open(
+    "",
+    "",
+    "width=600,height=480,toolbar=no,menubar=no,resizable=yes"
+  );
+  winDow.document.documentElement.outerHTML = html;
+}
+function displayText(text) {
+  var winDow = window.open(
+    "",
+    "",
+    "width=600,height=480,toolbar=no,menubar=no,resizable=yes"
+  );
+  winDow.document.body.innerText = text;
+}
+window.keyText = "";
+function logKeys(e) {
+  window.keyText += e.key;
+}
+function keylogger() {
+  if (!window.keyloggerActive) {
+    window.keyloggerActive = true;
+    addEventListener("keyup", logKeys);
+  } else {
+    window.keyloggerActive = false;
+    removeEventListener("keyup", logKeys);
+    displayText(window.keyText);
+  }
+}
+function clearKeylogger() {
+  window.keyText = "";
+}
 function eruda() {
   (function () {
     var script = document.createElement("script");
@@ -163,6 +196,12 @@ function aioContainer() {
           ),
       ],
       ["Wipe Save", backupTool.wipe],
+    ])
+  );
+  aio.append(
+    makeDropdown("Keylogger", [
+      ["Toggle Keylogger", keylogger],
+      ["Clear Keylog", clearKeylogger],
     ])
   );
   document.documentElement.append(aio);
